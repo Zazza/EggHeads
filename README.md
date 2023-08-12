@@ -97,16 +97,17 @@ function printOrderTotal(responseString) {
             orderSubtotal += parseFloat(item.price);
         }
     });
-        return orderSubtotal;
-    }
+    
+    return orderSubtotal;
+}
 
-    function getOutput(jsonString) {
-        const total = printOrderTotal(jsonString);
-        let outputSum = total === 0? 'Бесплатно': total + ' руб.';
-        return 'Стоимость заказа: ' + outputSum;
-    }
+function getOutput(jsonString) {
+    const total = printOrderTotal(jsonString);
+    let outputSum = total === 0? 'Бесплатно': total + ' руб.';
+    return 'Стоимость заказа: ' + outputSum;
+}
 
-    console.log(getOutput('[{"price":0}]'));
-    console.log(getOutput('[{"price":1}, {"price":7}]'));
-    console.log(getOutput('[{"price":1.01}, {"price":101.448}]'));
+console.log(getOutput('[{"price":0}]'));
+console.log(getOutput('[{"price":1}, {"price":7}]'));
+console.log(getOutput('[{"price":1.01}, {"price":101.448}]'));
 ```
