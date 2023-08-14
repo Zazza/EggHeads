@@ -58,7 +58,7 @@ SELECT
     users.name AS 'Counterparty name',
     users.phone AS 'Counterparty phone',
     SUM(orders.subtotal) AS 'Orders sum',
-    AVG((orders.subtotal)) AS 'Average sum',
+    AVG(orders.subtotal) AS 'Average sum',
     MAX(orders.created) AS 'Last order date'
 FROM users
 LEFT JOIN orders ON (orders.user_id = users.id)
